@@ -1,0 +1,25 @@
+[package]
+name = "oxtu"
+authors.workspace = true
+edition.workspace = true
+version.workspace = true
+
+[dependencies]
+tokio = { workspace = true, features = ["signal"] }
+oxtu-index.workspace = true
+anyhow.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tracing = "0.1.40"
+jsonrpsee = { version = "0.24.0", features = ["server", "macros", "http-client"] }
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+bigdecimal = { version = "0.4.5", features = ["serde-json"] }
+bitcoincore-rpc = "0.19.0"
+hex = "0.4.3"
+once_cell = "1.19.0"
+
+[dev-dependencies]
+tempfile.workspace = true
+tracing-test.workspace = true
+testcontainers.workspace = true
+testcontainers-bitcoind.workspace = true

@@ -1,0 +1,25 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/oxtu",
+    "crates/oxtu-index",
+    "crates/testcontainers-bitcoind",
+]
+
+[workspace.package]
+authors = ["Fuxing Loh"]
+edition = "2021"
+version = "0.1.0"
+
+[workspace.dependencies]
+oxtu = { path = "crates/oxtu" }
+oxtu-index = { path = "crates/oxtu-index" }
+testcontainers-bitcoind = { path = "crates/testcontainers-bitcoind" }
+testcontainers = { version = "0.20.0", features = ["blocking"] }
+serde = { version = "1.0.204", features = ["derive"] }
+serde_json = "1.0.120"
+anyhow = "1.0.86"
+tempfile = "3.10.1"
+tokio = "1.38.0"
+tracing = "0.1.40"
+tracing-test = { version = "0.2.5" }

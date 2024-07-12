@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  bitcoind:
+    image: docker.io/kylemanna/bitcoind:latest
+    environment:
+      - RPCUSER=oxtu
+      - RPCPASSWORD=oxtu
+    volumes:
+      - bitcoind:/bitcoin/.bitcoin
+
+  oxtu:
+    image: ghcr.io/fuxingloh/oxtu:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - BITCOIND_RPC_URL=http://bitcoind:8332
+      - BITCOIND_RPC_USERNAME=oxtu
+      - BITCOIND_RPC_PASSWORD=oxtu
+    volumes:
+      - oxtu:/oxtu/.oxtu
+    depends_on:
+      - bitcoind
+
+volumes:
+  bitcoind:
+  oxtu:
