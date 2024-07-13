@@ -50,6 +50,11 @@ volumes:
 
 ## OXTU Design
 
+> [!NOTE]  
+> While OXTU is designed to reduce write amplification, some parts of the code aren't well-thought-out yet.
+> And it is not yet optimized for performance,
+> but it's fast enough to catch up with the Bitcoin Core when running in parallel.
+
 ### Connecting Blocks
 
 OXTU uses the same "connecting block" mechanism as Bitcoin Core.
