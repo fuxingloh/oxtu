@@ -17,7 +17,7 @@ oxtu-index = { path = "crates/oxtu-index" }
 testcontainers-bitcoind = { path = "crates/testcontainers-bitcoind" }
 testcontainers = { version = "0.20.1", features = ["blocking"] }
 serde = { version = "1.0.204", features = ["derive"] }
-serde_json = "1.0.120"
+serde_json = "1.0.124"
 anyhow = "1.0.86"
 tempfile = "3.10.1"
 tokio = "1.39.1"
